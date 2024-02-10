@@ -1,14 +1,32 @@
 class Card:
+
     def __init__(self, Number, Colour):
-        self.Number = Number # INTEGER
-        self.Colour = Colour # STRING
+        """
+        :param Number: int
+        :param Colour: str
+        """
+        self.Number = Number
+        self.Colour = Colour
+
 
     def GetNumber(self):
+        """
+        getter method for returning the number
+        :return: int
+        """
         return self.Number
 
     def GetColour(self):
+        """
+        getter method for returing the color
+        :return: str
+        """
         return self.Colour
 
+
+"""
+Reading data from the CardValues file and adding them to the cards array
+"""
 
 cards = []  # Integer
 try:
@@ -25,6 +43,10 @@ selected_indexes = []
 
 
 def ChooseCard():
+    """
+    Choosing a random card from the cards array and returing its index
+    :return: int
+    """
     global selected_indexes
     index = int(input("Please enter an index from 1 to 30: "))
     if 1 > index > 30:

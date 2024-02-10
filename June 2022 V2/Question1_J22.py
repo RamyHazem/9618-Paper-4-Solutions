@@ -2,11 +2,21 @@ StackData = [] # 1 to 10 Items
 StackPointer = 0
 
 def output_array_data(array):
+    """
+    printing the current pointer and returning all the values in the array
+    :param array: str[]
+    :return: None
+    """
     print(StackPointer)
     for item in array:
         print(item)
 
 def Push(integer):
+    """
+    add a new value to the stack
+    :param integer: int
+    :return: bool
+    """
     global StackPointer
     if len(StackData) == 10:
         return False
@@ -16,6 +26,10 @@ def Push(integer):
     return True
 
 def Pop():
+    """
+    Pop an item from the stack
+    :return: int
+    """
     global StackPointer
     if len(StackData) == 0:
         return -1

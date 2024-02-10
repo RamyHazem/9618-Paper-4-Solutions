@@ -1,5 +1,9 @@
 import random
 
+"""
+Creating a 2D array with 10 rows and colums and assigning a random number to each value
+"""
+
 data = []
 for array in range(0, 10):
     new_arr = []
@@ -8,6 +12,10 @@ for array in range(0, 10):
         new_arr.append(random_number)
 
     data.append(new_arr)
+
+"""
+Bubble sort algoritm on a 2D array - not the best since time complexity is O(n^2)
+"""
 
 ArrayLength = 10
 for x in range(0, ArrayLength ):
