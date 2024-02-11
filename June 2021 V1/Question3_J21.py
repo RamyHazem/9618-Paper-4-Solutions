@@ -10,14 +10,28 @@ class TreasureChest(object):
         self.points = int(points)
 
     def getQuestion(self):
+        """
+        returns the current question
+        :return:str
+        """
         return self.question
 
     def checkAnswer(self, user_answer):
+        """
+        check if the user's answer is correct
+        :param user_answer: int
+        :return: bool
+        """
         if user_answer == self.answer:
             return True
         return False
 
     def getPoints(self, no_of_attempts):
+        """
+        returns the number of points the user earns for answering this question
+        :param no_of_attempts: int
+        :return: int
+        """
         if no_of_attempts == 1:
             return self.points
         elif no_of_attempts == 2:
@@ -29,6 +43,7 @@ class TreasureChest(object):
 
 
 arrayTreasure = []  # Type TreasureChest
+
 
 def readData():
     try:
