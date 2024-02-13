@@ -60,3 +60,4 @@ print("Results: ")
 for pic in picArr:
     if pic.GetColour() == frameColourReq and pic.GetWidth() <= maxWidthReq and pic.GetHeight() <= maxHeightReq:
         print(f"Description: {pic.GetDescription()}, Width: {pic.GetWidth()}, Height: {pic.GetHeight()}")
+
