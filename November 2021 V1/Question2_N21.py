@@ -30,7 +30,6 @@ class Picture(object):
 
 picArr = [Picture("", 0, 0, "") for i in range(100)]
 
-
 def ReadData():
     counter = 0
     try:
