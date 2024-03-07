@@ -20,12 +20,14 @@ def AddJob(num, priority):
 
     return "Not added"
 
+
 Initialise()
 print(AddJob(12, 10))
 print(AddJob(526, 9))
 print(AddJob(33, 8))
 print(AddJob(12, 9))
 print(AddJob(78, 1))
+
 
 def InsertionSort(arr):
     for i in range(1, len(arr)):
@@ -42,6 +44,7 @@ def PrintArr():
     for job in Jobs:
         if job[0] != -1:
             print(f"{job[0]} priority {job[1]}")
+
 
 InsertionSort(Jobs)
 PrintArr()
