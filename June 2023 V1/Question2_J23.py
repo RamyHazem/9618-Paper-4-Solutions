@@ -34,7 +34,10 @@ class Vehicle(object):
         self.CurrentSpeed += self.IncreaseAmount
         if self.CurrentSpeed > self.MaxSpeed:
             self.CurrentSpeed = self.MaxSpeed
-            self.HorizontalPosition += self.CurrentSpeed
+        self.HorizontalPosition += self.CurrentSpeed
+
+    def outputPosition(self):
+        return f"The Horizontal Position is {self.HorizontalPosition} and the Current Speed of the Vehicle is {self.CurrentSpeed}"
 
 
 class Helicopter(Vehicle):
@@ -47,11 +50,29 @@ class Helicopter(Vehicle):
         :param VerticalChange: int
         :param MaxHeight: int
         """
-        super.__init__(ID, MaxSpeed, IncreaseAmount)
+        super().__init__(ID, MaxSpeed, IncreaseAmount)
         self.VerticalPosition = 0
         self.VerticalChange = VerticalChange
         self.MaxHeight = MaxHeight
 
     def IncreaseSpeed(self):
         self.VerticalPosition += self.VerticalChange
+        if self.VerticalChange > self.MaxHeight:
+            self.VerticalPosition = self.MaxHeight
+        self.CurrentSpeed += self.IncreaseAmount
+        if self.CurrentSpeed > self.MaxSpeed:
+            self.CurrentSpeed = self.MaxSpeed
+        self.HorizontalPosition += self.CurrentSpeed
 
+    def outputPosition(self):
+        return f"The Horizontal Position is {self.HorizontalPosition} and the Current Speed of the Vehicle is {self.CurrentSpeed} and the Vertical Position is {self.VerticalPosition}"
+
+
+car = Vehicle(ID="Tiger", MaxSpeed=100, IncreaseAmount=20)
+helicopter = Helicopter(ID="Lion", MaxSpeed=350, IncreaseAmount=40, VerticalChange=3, MaxHeight=100)
+car.IncreaseSpeed()
+car.IncreaseSpeed()
+print(car.outputPosition())
+helicopter.IncreaseSpeed()
+helicopter.IncreaseSpeed()
+print(helicopter.outputPosition())
